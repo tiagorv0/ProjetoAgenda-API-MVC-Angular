@@ -1,0 +1,58 @@
+@model Agenda.MVC.ViewModels.ContactPostViewModel
+
+@{
+  ViewData["Title"] = Model!.Id.HasValue ? "Editar Contato" : "Novo Contato";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+    <div class="col s4">
+        <form asp-action="Form">
+            <div asp-validation-summary="ModelOnly" class="helper-text"></div>
+            <div class="input-field">
+                <label asp-for="Name" ></label>
+                <input asp-for="Name" class="validate" />
+                <span asp-validation-for="Name" class="helper-text"></span>
+            </div>
+
+            @await Html.PartialAsync("_AddPhone", Model)
+              
+            <div class="form-group">
+                <a asp-action="Index" class="waves-effect waves-light btn"><i class="material-icons left">arrow_back</i>Voltar</a>
+                <button class="btn waves-effect waves-light light-green" type="submit" name="action">Salvar
+                  <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+    integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+    crossorigin="anonymous">
+    </script>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+        const elems = document.querySelectorAll('select');
+        const instances = M.FormSelect.init(elems);
+       });
+
+      $('.phone-type').each(function (index, el) {
+        ChangeMask(el);
+      });
+      $('.phone-type').change(function (event) {
+        ChangeMask(this);
+      });
+      function ChangeMask(el) {
+        const type = $(el).val();
+        const phoneInput = $(el).parents('.add-phone').first().find('.formatted-phone');
+        phoneInput.mask(type == 2 ? '(00) 00000-0000' : '(00) 0000-0000');
+      }
+    </script>
+}

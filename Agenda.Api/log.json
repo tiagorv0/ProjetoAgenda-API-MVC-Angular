@@ -1,0 +1,272 @@
+﻿[
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 1,
+    "CreatedAt": "2022-06-10T10:43:21.9745556-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 2,
+    "CreatedAt": "2022-06-10T10:43:21.9745579-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 3,
+    "CreatedAt": "2022-06-10T10:43:21.9745581-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizar Contato",
+    "Id": 4,
+    "CreatedAt": "2022-06-10T10:43:21.9745582-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Remover Contato",
+    "Id": 5,
+    "CreatedAt": "2022-06-10T10:43:21.9745585-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 6,
+    "CreatedAt": "2022-06-10T10:43:21.9745587-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 7,
+    "CreatedAt": "2022-06-10T10:43:21.9745588-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizar Contato",
+    "Id": 8,
+    "CreatedAt": "2022-06-10T10:43:21.974559-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Remover Contato",
+    "Id": 9,
+    "CreatedAt": "2022-06-10T10:43:21.9745591-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 1,
+    "CreatedAt": "2022-06-10T13:03:15.8996241-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 2,
+    "CreatedAt": "2022-06-10T13:03:15.8996264-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 3,
+    "CreatedAt": "2022-06-10T13:03:15.8996265-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizar Contato",
+    "Id": 4,
+    "CreatedAt": "2022-06-10T13:03:15.8996266-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Remover Contato",
+    "Id": 5,
+    "CreatedAt": "2022-06-10T13:03:15.8996267-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 6,
+    "CreatedAt": "2022-06-10T13:03:15.8996268-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 7,
+    "CreatedAt": "2022-06-10T13:03:15.8996268-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizar Contato",
+    "Id": 8,
+    "CreatedAt": "2022-06-10T13:03:15.8996269-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Remover Contato",
+    "Id": 9,
+    "CreatedAt": "2022-06-10T13:03:15.899627-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 1,
+    "CreatedAt": "2022-06-10T17:05:21.3990586-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 2,
+    "CreatedAt": "2022-06-10T17:05:21.3990603-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 3,
+    "CreatedAt": "2022-06-10T17:05:21.3990605-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizar Contato",
+    "Id": 4,
+    "CreatedAt": "2022-06-10T17:05:21.3990606-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Remover Contato",
+    "Id": 5,
+    "CreatedAt": "2022-06-10T17:05:21.3990607-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 6,
+    "CreatedAt": "2022-06-10T17:05:21.3990608-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 1,
+    "InteractionType": null,
+    "Message": "Criar Contato",
+    "Id": 7,
+    "CreatedAt": "2022-06-10T17:05:21.3990609-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 2,
+    "InteractionType": null,
+    "Message": "Atualizar Contato",
+    "Id": 8,
+    "CreatedAt": "2022-06-10T17:05:21.3990611-03:00",
+    "UpdatedAt": null
+  },
+  {
+    "UserId": 1,
+    "User": null,
+    "InteractionTypeId": 3,
+    "InteractionType": null,
+    "Message": "Remover Contato",
+    "Id": 9,
+    "CreatedAt": "2022-06-10T17:05:21.3990612-03:00",
+    "UpdatedAt": null
+  }
+]

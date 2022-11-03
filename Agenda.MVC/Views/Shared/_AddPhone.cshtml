@@ -1,0 +1,49 @@
+@model ContactPostViewModel
+
+<div class="row">
+	<hr />
+	<h6>Telefones</h6>
+		
+		@for (var i = 0; i < Model!.Phones.Count(); i++)
+        {
+          
+            <div class="col-6 col-sm-3">
+               <div class="card blue-grey darken-1">
+                   <div class="card-content white-text"> 
+                       <div class="input-field">
+                           <label asp-for="Phones[i].Description" class="white-text"></label>
+                           <input asp-for="Phones[i].Description" class="validate" class="white-text"/>
+                           <span asp-validation-for="Phones[i].Description" class="helper-text"></span>
+                       </div>
+                       <div class="input-field">
+                           <label asp-for="Phones[i].FormattedPhone" class="white-text"></label>
+                           <input asp-for="Phones[i].FormattedPhone" class="validate" class="white-text" />
+                           <span asp-validation-for="Phones[i].FormattedPhone" class="helper-text"></span>
+                       </div>
+                       <div class="form-group">
+                           <label asp-for="Phones[i].PhoneTypeId" class="white-text"></label>
+                           @Html.DropDownListFor(x => x.Phones[i].PhoneTypeId, (SelectList)ViewBag.PhoneTypes, "--Selecione--", htmlAttributes: new { @class = "phone-type" })
+                           @Html.ValidationMessageFor(x => x.Phones[i].PhoneTypeId)
+                       </div>
+                   </div>
+                   <button name="option" value="RemovePhone|@i" class="btn waves-effect waves-light red darken-2" type="submit">
+                       <i class="material-icons">delete</i>
+                   </button>
+               </div>
+            </div>
+        
+    }
+        <div class="col-6 col-sm-3">
+          <div class="card blue-grey darken-1">
+               <div class="card-content white-text"> 
+		         <div class="input-field center">
+		             <button type="submit" name="option" class="waves-effect waves-light btn cancel" value="AddPhone">
+                       <i class="material-icons left">add</i>
+                       <span>Adicionar Telefone</span>
+                     </button>
+		       </div>
+             </div>
+           </div>
+         </div>
+         
+</div>

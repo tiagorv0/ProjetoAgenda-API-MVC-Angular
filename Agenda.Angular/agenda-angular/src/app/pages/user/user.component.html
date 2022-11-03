@@ -1,0 +1,24 @@
+<ng-container>
+  <div class="row">
+    <div >
+      <button mat-raised-button color="primary" [routerLink]="['create']">
+        <mat-icon>add</mat-icon>
+        <span>Novo Usuário</span>
+      </button>
+    </div>
+  </div>
+  <br>
+
+</ng-container>
+
+<div>
+  <app-search [options]="optionsSearch" (searchEvent)="search($event)"></app-search>
+</div>
+
+<div *ngIf="users$ | async as users">
+  <app-table [columns]="userColumns" [menuOptions]="tableOptions" [tableData]="users"></app-table>
+</div>
+
+
+
+

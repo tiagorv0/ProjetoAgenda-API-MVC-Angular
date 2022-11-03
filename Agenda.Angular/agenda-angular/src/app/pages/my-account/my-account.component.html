@@ -1,0 +1,40 @@
+<ng-container fxLayout="center" >
+  <mat-card [formGroup]="form" class="box">
+    <fieldset>
+    <legend ><strong>Minha Conta</strong></legend>
+    <br />
+    <mat-card-content>
+      <mat-form-field appearance="fill" fxLayout="column">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxLayout="column" >
+        <mat-label>E-mail</mat-label>
+        <input matInput type="text" formControlName="email" >
+        <span *ngIf="!!form.get('email')?.errors?.['email'] && form.markAsDirty">E-mail em formato inválido!</span>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxLayout="column">
+        <mat-label>Nome do Usuário</mat-label>
+        <input matInput type="text" formControlName="userName">
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxLayout="column">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxLayout="column" *ngIf="isAdmin()">
+        <mat-label>Cargo</mat-label>
+        <mat-select formControlName="userRoleId" >
+          <mat-option *ngFor="let item of roles$ | async" [value]="item.id" >{{ item.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-progress-bar mode="query" color="primary" *ngIf="isLoading" fxLayout="center"></mat-progress-bar>
+    </mat-card-content>
+
+    <mat-card-actions fxLayoutAlign="center">
+      <button mat-raised-button (click)="return()">Cancelar</button>
+      <button mat-raised-button [disabled]="form.invalid" color="primary" (click)="updateUser()">Salvar</button>
+    </mat-card-actions>
+  </fieldset>
+
+  </mat-card>
+</ng-container>

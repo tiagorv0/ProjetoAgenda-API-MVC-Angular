@@ -1,0 +1,44 @@
+
+table
+  $transition-duration: .2s
+
+  border: 0.1px solid #f5f5f5
+  width: 100%
+  color: black !important
+
+  th
+    background-color: #f5f5f5
+    padding: 0 1em
+    font-weight: bold
+    color: black !important
+
+  td
+    height: 32px
+    padding: 1em
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+
+
+  tr:hover
+    transition: background-color $transition-duration
+    background-color: #333
+
+  tr.mat-row
+    height: 3em
+
+  tr.mat-header-row
+    height: 3em
+
+
+  td.table-actions
+    margin-right: 1em
+    margin-left: -5em
+    margin-top: 0.7em
+    padding: 0 1em
+    color: #505050
+    height: 100%
+
+
+
+

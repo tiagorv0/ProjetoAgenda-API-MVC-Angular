@@ -1,0 +1,11 @@
+<div fxLayout="column" fxLayoutAlign="space-between center">
+    <h1 matDialogTitle>{{ data.title }}</h1>
+    <mat-divider></mat-divider>
+    <mat-dialog-content >
+        {{ data.message }}
+    </mat-dialog-content>
+    <mat-dialog-actions >
+      <button mat-raised-button (click)="close()">Cancelar</button>
+      <button mat-raised-button color="primary" [mat-dialog-close]="true">Confirmar</button>
+    </mat-dialog-actions>
+</div>

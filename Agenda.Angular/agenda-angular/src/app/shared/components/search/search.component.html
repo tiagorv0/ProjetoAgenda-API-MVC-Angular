@@ -1,0 +1,18 @@
+<mat-card  fxLayoutAlign="center" [formGroup]="form" class="box">
+  <mat-form-field appearance="fill" style="margin-right: 10px">
+    <mat-select  formControlName="field" >
+      <mat-option *ngFor="let item of options" [value]="item.value">{{ item.viewValue }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+    <mat-form-field appearance="fill" fxFlex="45" style="margin-right: 10px;" >
+      <input matInput type="text" placeholder="Pesquisa..." formControlName="value" class="input-search">
+    </mat-form-field>
+
+    <div fxFlexAlign="center">
+      <button mat-mini-fab color="primary" (click)="search()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+</mat-card>
+<br />

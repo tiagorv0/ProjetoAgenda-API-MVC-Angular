@@ -1,0 +1,61 @@
+<ng-container fxLayout="center" >
+  <mat-card [formGroup]="form" class="box">
+    <fieldset>
+    <legend ><strong>{{ title }}</strong></legend>
+    <br />
+    <mat-card-content>
+      <mat-form-field appearance="fill" >
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field *ngIf="isAdmin" appearance="fill"  >
+        <mat-label>Usuário</mat-label>
+        <mat-select formControlName="userId">
+          <mat-option *ngFor="let item of user$ | async" [value]="item.id">{{ item.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" (click)="buildPhoneForm()">Adicionar Telefone</button>
+
+      <div formArrayName="phones" class="col-sm-2">
+        <fieldset>
+          <legend ><strong> Telefone </strong></legend>
+        <mat-card *ngFor="let item of phonesFieldArray.controls; let i = index" [formGroupName]="i" class="box-phone">
+            <br />
+            <mat-form-field appearance="fill" >
+              <mat-label>Descrição</mat-label>
+              <input matInput type="text" formControlName="description" >
+            </mat-form-field>
+
+            <mat-form-field appearance="fill"  >
+              <mat-label>Tipo</mat-label>
+              <mat-select formControlName="phoneTypeId">
+                <mat-option *ngFor="let item of phoneTypes$ | async" [value]="item.id">{{ item.name }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" >
+              <mat-label>Número do Telefone</mat-label>
+              <input matInput [dropSpecialCharacters]="false" type="text" formControlName="formattedPhone" [mask]="getMask(i)">
+            </mat-form-field>
+
+
+            <button class="delete-btn" color="warn" mat-mini-fab (click)="removePhoneForm(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+
+          </mat-card>
+        </fieldset>
+      </div>
+
+      <mat-progress-bar mode="query" color="primary" *ngIf="isLoading" fxLayout="center"></mat-progress-bar>
+    </mat-card-content>
+
+    <mat-card-actions fxLayoutAlign="center">
+      <button mat-raised-button (click)="return()">Cancelar</button>
+      <button mat-raised-button [disabled]="form.invalid" color="primary" (click)="realizeFormAsync()">Salvar</button>
+    </mat-card-actions>
+  </fieldset>
+  </mat-card>
+</ng-container>

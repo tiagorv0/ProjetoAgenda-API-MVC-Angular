@@ -1,0 +1,47 @@
+@model Agenda.MVC.Areas.Admin.ViewModels.UserGetViewModel
+
+@{
+    ViewData["Title"] = "Excluir Usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Excluir Usuário</h4>
+
+<h6>Você tem certeza que deseja excluir?</h6>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+    </dl>
+
+    
+    <form asp-action="Delete">
+        <a asp-action="Index" class="waves-effect waves-light btn"><i class="material-icons left">arrow_back</i>Voltar</a>
+        <button class="btn waves-effect waves-light red darken-2" type="submit" name="action">Excluir
+	      <i class="material-icons right">delete</i>
+	    </button>
+    </form>
+</div>

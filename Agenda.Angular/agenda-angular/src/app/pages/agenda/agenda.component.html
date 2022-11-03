@@ -1,0 +1,20 @@
+<ng-container>
+  <div class="row">
+    <div fxLayoutGap="1em" fxFlex="80">
+      <button mat-raised-button color="primary" [routerLink]="['create']">
+        <mat-icon>add</mat-icon>
+        <span>Novo Contato</span>
+      </button>
+    </div>
+  </div>
+  <br>
+
+</ng-container>
+
+<div>
+  <app-search [options]="optionsSearch" (searchEvent)="search($event)"></app-search>
+</div>
+
+<div *ngIf="contacts$ | async as contact">
+  <app-table [columns]="agendaColumns" [menuOptions]="tableOptions" [tableData]="contact"></app-table>
+</div>

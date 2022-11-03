@@ -1,0 +1,38 @@
+   <mat-toolbar>
+      <button mat-icon-button [matMenuTriggerFor]="menu" >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button mat-button>
+        <span [routerLink]="['']">Agenda Application</span>
+      </button>
+      <span class="example-spacer"></span>
+        <button mat-button [routerLink]="['my-account']">
+          <mat-icon>manage_accounts</mat-icon>
+        </button>
+        <button mat-button (click)="logout()" style="margin-right: 3em;">
+            <mat-icon>logout</mat-icon>
+        </button>
+  </mat-toolbar>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/agenda']">
+      <mat-icon>contact_phone</mat-icon>
+      <span >Agenda</span>
+    </button>
+    <div *ngIf="isAdmin()">
+      <button mat-menu-item [routerLink]="['/admin/agenda']">
+        <mat-icon>contacts</mat-icon>
+        <span >Agenda Admin</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/admin/user']">
+        <mat-icon>groups</mat-icon>
+        <span >Usuários</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>event_note</mat-icon>
+        <span>Logs</span>
+      </button>
+    </div>
+  </mat-menu>
+
+

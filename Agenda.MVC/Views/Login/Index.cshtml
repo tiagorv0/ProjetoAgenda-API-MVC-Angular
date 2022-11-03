@@ -1,0 +1,60 @@
+@model Agenda.MVC.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @if(@TempData["error"] != null)
+    {
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript">
+          toastr.error('@TempData["error"]');
+        </script>
+    }   
+</div>
+
+    <div class="row"><br>
+      		<div class="col m8 s8 center">
+      			<h4 class="truncate bg-card-user">
+      				<a class="btn-floating btn-large waves-effect waves-light green"><i class="large material-icons">contact_phone</i></a>
+					  <div class="row">
+					  	<h2>Login</h2>
+					    <form asp-controller="Login" asp-action="Index" method="post" class="col s6">
+                          
+					      <div class="row">
+                            <div class="col s12">
+					         <div class="input-field inline">
+					          <i class="material-icons iconis prefix">account_box</i>
+					          <input asp-for="Username" type="text" class="validate">
+					          <label asp-for="Username" ></label>
+                              <span asp-validation-for="Username" class="helper-text"></span>
+					        </div>
+                            </div>
+					      </div>
+					      <div class="row">
+                            <div class="col s12">
+					        <div class="input-field inline">
+					          <i class="material-icons iconis prefix">enhanced_encryption</i>
+					          <input asp-for="Password" type="password" class="validate" >
+					          <label asp-for="Password" ></label>
+                              <span asp-validation-for="Password" class="helper-text" ></span>
+					        </div>
+                            </div>
+					      </div>
+					      <div class="row">
+                            <div class="col s12">
+					      	<input type="submit" value="Enviar" class="btn btn-success" />
+                              </div>
+					      </div>
+					    </form>
+					  </div>
+      			</h4>
+		   	  </div>
+      </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

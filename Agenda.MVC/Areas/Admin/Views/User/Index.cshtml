@@ -1,0 +1,65 @@
+@model PageParams<UserGetViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Administração de Usuários</h3>
+
+<p>
+    <a asp-action="Create" title="Criar Novo Usuário" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
+</p>
+
+<partial name="_SpanSuccess" />
+
+<table class="striped">
+    <thead>
+        @foreach(var item in Model.Itens)
+        {
+          <tr>
+              <th>
+                  @Html.DisplayNameFor(model => item.Id)
+              </th>
+              <th>
+                  @Html.DisplayNameFor(model => item.Name)
+              </th>
+              <th>
+                  @Html.DisplayNameFor(model => item.UserName)
+              </th>
+              <th>
+                  @Html.DisplayNameFor(model => item.Email)
+              <th></th>
+          </tr>
+          break;
+        }
+    </thead>
+    <tbody>
+      @foreach (var item in Model.Itens)
+      {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td class="right">
+                <a asp-action="Edit" asp-route-id="@item.Id" title="Editar" class="btn-floating btn-small waves-effect waves-light"> <i class="material-icons orange darken-1">edit</i></a>
+                <a asp-action="Details" asp-route-id="@item.Id" title="Detalhes" class="btn-floating btn-small waves-effect waves-light"> <i class="material-icons waves-yellow">description</i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id" title="Deletar" class="btn-floating btn-small waves-effect waves-light red"> <i class="material-icons">delete</i></a>
+            </td>
+        </tr>
+      } 
+    </tbody>
+</table>
+
+<br />
+
+@await Html.PartialAsync("_NavPage", Model)

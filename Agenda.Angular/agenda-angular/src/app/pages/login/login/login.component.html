@@ -1,0 +1,23 @@
+<div [formGroup]="form" fxFill fxLayoutAlign="center center">
+  <div fxLayoutAlign="center" fxLayout="column">
+    <mat-card>
+    <h2 fxLayoutAlign="center">Login</h2>
+      <mat-form-field appearance="fill">
+        <mat-label>Nome do Usuário</mat-label>
+        <input matInput type="text" formControlName="username" id="username" />
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="password" id="password"/>
+      </mat-form-field>
+      <br>
+      <div fxLayoutAlign="center">
+        <button type="submit" mat-raised-button color="primary"
+        [disabled]="form.invalid" (click)="loginAsync()" id="loginbtn">Login</button>
+      </div>
+      <br />
+      <mat-progress-bar mode="query" color="primary" *ngIf="isLoading"></mat-progress-bar>
+    </mat-card>
+  </div>
+</div>

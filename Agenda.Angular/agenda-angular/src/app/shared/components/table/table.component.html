@@ -1,0 +1,31 @@
+<ng-container *ngIf="dataSource; else withoutData">
+  <table cdk-table [dataSource]="dataSource">
+    <ng-container *ngFor="let tableColumn of columns" [matColumnDef]="tableColumn.name">
+
+      <th cdk-header-cell *matHeaderCellDef >{{ tableColumn.name }} </th>
+      <td cdk-cell *matCellDef="let element" > {{ element | dataPropertyGetter: tableColumn.dataKey }}</td>
+
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th cdk-header-cell *matHeaderCellDef ></th>
+      <td *matCellDef="let element" fxLayoutAlign="center center">
+        <button mat-mini-fab color="accent" (click)="editOption(element.id)" style="margin-right: 10px;">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn" (click)="deleteOption(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+      <tr cdk-header-row *matHeaderRowDef="displayedColumns" ></tr>
+      <tr cdk-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="paginationSizes"
+  [pageSize]="2" [length]="paginationTotal">
+  </mat-paginator>
+</ng-container>
+
+<ng-template #withoutData>
+  <span fxLayoutAlign="center"><strong>Nenhum dado encontrado...</strong></span>
+</ng-template>

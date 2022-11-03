@@ -1,0 +1,36 @@
+@using Agenda.MVC.Constants
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Agenda" asp-action="Index">Agenda</a>
+            </li>
+            @if (User.IsInRole(Roles.Admin))
+            {
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="admin" asp-controller="AgendaAdmin" asp-action="Index">AgendaAdmin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="admin" asp-controller="User" asp-action="Index">Usuários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="admin" asp-controller="Log" asp-action="Index">Logs</a>
+                </li>
+            }
+        </ul>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a  class="nav-link text-dark" asp-controller="Login" asp-action="Index" title="Manage">Hello @User.Identity.Name !</a>
+            </li>
+            <li class="nav-item">
+                <form  class="form-inline" asp-area="" asp-controller="Login" asp-action="Logout">
+                    <button type="submit" class="waves-effect waves-light btn">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+}
+

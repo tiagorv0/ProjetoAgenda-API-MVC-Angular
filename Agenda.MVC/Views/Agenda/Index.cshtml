@@ -1,0 +1,40 @@
+@model PageParams<ContactGetViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Contatos</h3>
+
+@using (Html.BeginForm("Index", "Agenda", FormMethod.Get))
+{
+  <div class="row">
+    <div class="input-field col s1">
+      @Html.DropDownListFor(x => x.Search.Prop, Model!.GetSearchProps(), new{@class = "select"})
+      @Html.ValidationMessageFor(x => x.Search.Prop)
+    </div>
+    <div class="input-field col s4">
+      @Html.TextBoxFor(x => x.Search.Value, new {@class = "form-control rounded", @placeholder ="Search", @type = "search" })
+      @Html.ValidationMessageFor(x => x.Search.Value)
+    </div>
+    <div class="btns-container col s5 ">
+      <button class="btn-flat btn-large search-btn">
+        <i class="material-icons">search</i>
+      </button>
+    </div>
+  </div>
+
+@await Html.PartialAsync("_ListIndex", Model.Itens)
+
+@await Html.PartialAsync("_NavPage", Model)
+
+}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const elems = document.querySelectorAll('select');
+    const instances = M.FormSelect.init(elems);
+  });
+</script>
+

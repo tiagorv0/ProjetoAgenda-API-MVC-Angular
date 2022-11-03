@@ -1,0 +1,46 @@
+@model IEnumerable<ContactGetViewModel>
+
+<p>
+    <a asp-action="Form" title="Criar Novo Contato" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
+</p>
+
+<partial name="_SpanSuccess" />
+
+<table class="striped">
+    <thead>
+        <tr>
+          @foreach(var item in Model)
+          {
+
+            <th>
+                @Html.DisplayNameFor(model => item.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => item.Name)
+            </th>
+            <th></th>
+                break;
+          }
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+              <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="right">
+                    <a asp-action="Form" asp-route-id="@item.Id" title="Editar" class="btn-floating btn-small waves-effect waves-light"> <i class="material-icons orange darken-1">edit</i></a>
+                    <a asp-action="Details" asp-route-id="@item.Id" title="Detalhes" class="btn-floating btn-small waves-effect waves-light"> <i class="material-icons waves-yellow">description</i></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" title="Deletar" class="btn-floating btn-small waves-effect waves-light red"> <i class="material-icons">delete</i></a>
+                </td>
+              </tr>
+            }
+      
+    </tbody>
+</table>
+<br />

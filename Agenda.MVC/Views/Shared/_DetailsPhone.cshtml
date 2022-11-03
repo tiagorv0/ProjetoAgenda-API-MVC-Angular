@@ -1,0 +1,32 @@
+@model ContactGetViewModel
+
+<div class="row">
+    @if(Model.Phones.Count() == 0)
+    {
+        <div class="col-6 col-sm-3">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title" >Sem Telefone</span>
+          </div>
+          <div class="card-action">
+          </div>
+        </div>
+      </div>
+    }
+    @for (var i = 0; i < Model!.Phones.Count(); i++)
+    {
+      <div class="col-6 col-sm-3">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title" >@Html.DisplayFor(x => x.Phones[i].Description)</span>
+            <label asp-for="Phones[i].PhoneType.Name" ></label>
+            <p>@Model.Phones[i].PhoneType.Name</p>
+            <label asp-for="Phones[i].FormattedPhone" ></label>
+            <p>@Model.Phones[i].FormattedPhone</p>
+          </div>
+          <div class="card-action">
+          </div>
+        </div>
+      </div>
+    }
+</div>
