@@ -1,3 +1,4 @@
+using Agenda.Application.Interfaces;
 using Agenda.Application.Utils;
 using Agenda.Application.ViewModels.Phone;
 using Agenda.Domain.Core;
@@ -9,14 +10,14 @@ namespace Agenda.Application.Validations
     public class PhoneValidator : AbstractValidator<RequestPhoneViewModel>
     {
 
-        public PhoneValidator(RulesValidation rulesValidation)
+        public PhoneValidator(IRulesValidation rulesValidation)
         {
             RuleFor(x => x.FormattedPhone)
                 .NotEmpty().WithMessage("{PropertyName} não pode ser vazio")
                 .Must(x => PhoneUtils.IsValid(x))
                 .WithMessage("{PropertyName}: {PropertyValue} - Formato de telefone inválido: (xx) x?xxxx-xxxx");
 
-            RuleFor(x => x.FormattedPhone).MustAsync((p, cancelToken) => rulesValidation.ExistFormattedPhoneAsync(p , cancelToken))
+            RuleFor(x => x.FormattedPhone).MustAsync((p, cancelToken) => rulesValidation.ExistFormattedPhoneAsync(p, cancelToken))
                 .WithMessage("Telefone já existe {PropertyName}: {PropertyValue}");
 
             RuleFor(x => x.PhoneTypeId)

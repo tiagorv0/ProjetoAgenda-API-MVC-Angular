@@ -1,4 +1,4 @@
-using Agenda.Application.Utils;
+using Agenda.Application.Interfaces;
 using Agenda.Application.ViewModels.User;
 using Agenda.Domain.Core;
 using Agenda.Domain.Entities.Enums;
@@ -8,7 +8,7 @@ namespace Agenda.Application.Validations
 {
     public class UserValidator : AbstractValidator<RequestUserViewModel>
     {
-        public UserValidator(RulesValidation rulesValidation)
+        public UserValidator(IRulesValidation rulesValidation)
         {
             RuleFor(x => x.Name)
                 .NotNull().WithMessage("{PropertyName} não pode ser nulo")

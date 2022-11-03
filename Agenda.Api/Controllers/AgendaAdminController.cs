@@ -62,7 +62,7 @@ namespace Agenda.Api.Controllers
         {
             var obj = new PaginationResponse<ResponseAdminContactViewModel>
             {
-                Data = await _agendaAdminService.GetParamsAsync(contactParams),
+                Data = await _agendaAdminService.GetParamsAsync(contactParams, contactParams.Skip, contactParams.Take),
                 Total = await _agendaAdminService.CountAsync(contactParams),
                 Take = contactParams.Take,
                 Skip = contactParams.Skip,

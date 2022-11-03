@@ -67,7 +67,7 @@ namespace Agenda.Api.Controllers
         {
             var obj = new PaginationResponse<ResponseUserViewModel>
             {
-                Data = await _userService.GetParamsAsync(userParams),
+                Data = await _userService.GetParamsAsync(userParams, userParams.Skip, userParams.Take),
                 Total = await _userService.CountAsync(userParams),
                 Take = userParams.Take,
                 Skip = userParams.Skip,
