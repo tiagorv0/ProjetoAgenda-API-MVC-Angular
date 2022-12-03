@@ -26,7 +26,7 @@ Api realizado durante o estágio no LabLuby.
 
 # Imagens:
 
-- Assets
+- <a href="https://github.com/tiagorv0/ProjetoAgenda-API-MVC-Angular/tree/master/Assets">Assets</a>
 
 # Testes:
 - Testes realizados Manualmente;
