@@ -27,3 +27,8 @@ Api realizado durante o estágio no LabLuby.
 # Imagens:
 
 - Assets
+
+# Testes:
+- Testes realizados Manualmente;
+- Testes realizados com Selenium;
+- Testes realizados com Postman;
